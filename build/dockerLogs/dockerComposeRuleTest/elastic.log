@@ -1,0 +1,21 @@
+Attaching to elastic
+elastic    | [2017-07-30T18:17:01,044][INFO ][o.e.n.Node               ] [] initializing ...
+elastic    | [2017-07-30T18:17:01,199][INFO ][o.e.e.NodeEnvironment    ] [BA3Xk6f] using [1] data paths, mounts [[/ (overlay)]], net usable_space [57.9gb], net total_space [62.7gb], spins? [possibly], types [overlay]
+elastic    | [2017-07-30T18:17:01,200][INFO ][o.e.e.NodeEnvironment    ] [BA3Xk6f] heap size [990.7mb], compressed ordinary object pointers [true]
+elastic    | [2017-07-30T18:17:01,201][INFO ][o.e.n.Node               ] node name [BA3Xk6f] derived from node ID [BA3Xk6frRLOSPc5LeIEOCA]; set [node.name] to override
+elastic    | [2017-07-30T18:17:01,202][INFO ][o.e.n.Node               ] version[5.5.1], pid[1], build[19c13d0/2017-07-18T20:44:24.823Z], OS[Linux/4.9.36-moby/amd64], JVM[Oracle Corporation/OpenJDK 64-Bit Server VM/1.8.0_141/25.141-b16]
+elastic    | [2017-07-30T18:17:01,202][INFO ][o.e.n.Node               ] JVM arguments [-Xms2g, -Xmx2g, -XX:+UseConcMarkSweepGC, -XX:CMSInitiatingOccupancyFraction=75, -XX:+UseCMSInitiatingOccupancyOnly, -XX:+AlwaysPreTouch, -Xss1m, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djna.nosys=true, -Djdk.io.permissionsUseCanonicalPath=true, -Dio.netty.noUnsafe=true, -Dio.netty.noKeySetOptimization=true, -Dio.netty.recycler.maxCapacityPerThread=0, -Dlog4j.shutdownHookEnabled=false, -Dlog4j2.disable.jmx=true, -Dlog4j.skipJansi=true, -XX:+HeapDumpOnOutOfMemoryError, -Des.cgroups.hierarchy.override=/, -Xms1g, -Xmx1g, -Des.path.home=/usr/share/elasticsearch]
+elastic    | [2017-07-30T18:17:02,755][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [aggs-matrix-stats]
+elastic    | [2017-07-30T18:17:02,755][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [ingest-common]
+elastic    | [2017-07-30T18:17:02,756][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [lang-expression]
+elastic    | [2017-07-30T18:17:02,757][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [lang-groovy]
+elastic    | [2017-07-30T18:17:02,757][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [lang-mustache]
+elastic    | [2017-07-30T18:17:02,758][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [lang-painless]
+elastic    | [2017-07-30T18:17:02,758][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [parent-join]
+elastic    | [2017-07-30T18:17:02,759][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [percolator]
+elastic    | [2017-07-30T18:17:02,759][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [reindex]
+elastic    | [2017-07-30T18:17:02,760][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [transport-netty3]
+elastic    | [2017-07-30T18:17:02,760][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded module [transport-netty4]
+elastic    | [2017-07-30T18:17:02,762][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded plugin [ingest-geoip]
+elastic    | [2017-07-30T18:17:02,762][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded plugin [ingest-user-agent]
+elastic    | [2017-07-30T18:17:02,763][INFO ][o.e.p.PluginsService     ] [BA3Xk6f] loaded plugin [x-pack]
