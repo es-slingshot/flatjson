@@ -29,4 +29,5 @@ public class CheckPluginDeploymentIT {
         Assume.assumeTrue(false);
     }
 
+
 }
