@@ -12,7 +12,7 @@ public class IngestBanoPlugin extends Plugin implements IngestPlugin {
 
     @Override
     public Map<String, Processor.Factory> getProcessors(Processor.Parameters parameters) {
-        return Collections.singletonMap("bano", new BanoProcessor.BanoFactory());
+        return Collections.singletonMap("flatjson-esplugin", new BanoProcessor.BanoFactory());
     }
 
 

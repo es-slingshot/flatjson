@@ -24,7 +24,7 @@ public class CheckPluginDeploymentIT {
             final LogStream output = docker.logs(containers.get(0).id(), DockerClient.LogsParam.stdout(), DockerClient.LogsParam.stderr());
             final String execOutput = output.readFully();
             System.out.println(execOutput);
-            Assert.assertTrue("Logs should contains 'x-pack'", execOutput.contains("x-pack"));
+            Assert.assertTrue("Logs should contains 'flatjson-esplugin'", execOutput.contains("flatjson-esplugin"));
         }
         Assume.assumeTrue(false);
     }

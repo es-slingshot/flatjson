@@ -12,7 +12,7 @@ import org.elasticsearch.ingest.Processor;
 
 public final class BanoProcessor extends AbstractProcessor {
 
-    public final static String NAME = "bano";
+    public final static String NAME = "flatjson-esplugin";
     private final String sourceField;
     private final String targetField;
 

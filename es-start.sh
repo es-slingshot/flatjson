@@ -28,13 +28,23 @@ fi
 for i in {1..60}
 do
     STATUS=$(curl -s -o /dev/null -w '%{http_code}' $ELASTIC_HEALTHCHECK)
-    echo "[$STATUS] : $ELASTIC_HEALTHCHECK"
+    echo "1. [$STATUS] : $ELASTIC_HEALTHCHECK"
     if [ $STATUS -eq 200 ]
     then
         # If cluster is ok, so copy the deploy script and deploy the plugin
         docker cp es-deploy.sh $CONTAINER_NAME:/usr/share/elasticsearch/bin/es-deploy.sh
-        docker exec $CONTAINER_NAME /usr/share/elasticsearch/bin/es-deploy.sh
-        exit 0
+        docker exec    $CONTAINER_NAME /usr/share/elasticsearch/bin/es-deploy.sh
+        docker restart $CONTAINER_NAME
+        for j in {1..60}
+        do
+            STATUS=$(curl -s -o /dev/null -w '%{http_code}' $ELASTIC_HEALTHCHECK)
+            echo "2. [$STATUS] : $ELASTIC_HEALTHCHECK"
+            if [ $STATUS -eq 200 ]
+            then
+                exit 0
+            fi
+            sleep 1
+        done
     fi
     sleep 1
 done
