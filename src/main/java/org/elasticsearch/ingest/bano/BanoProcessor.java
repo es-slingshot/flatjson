@@ -32,7 +32,8 @@ public final class BanoProcessor extends AbstractProcessor {
 
         Map<String, Object> mapValue
                 = XContentHelper.convertToMap(JsonXContent.jsonXContent
-                                    , ingestDocument.getFieldValue(jsonField, String.class)
+                                    , ingestDocument.getFieldValue(jsonField
+                        , String.class)
                                     ,false);
 
         // dispatch the json bloc to a list of new fields
