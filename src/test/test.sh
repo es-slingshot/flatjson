@@ -6,6 +6,8 @@ curl -XPUT 'localhost:9200/_ingest/pipeline/flatjson?pretty' -H 'Content-Type: a
   "processors" : [
     {
       "flatjson-esplugin" : {
+        "jsonField": "message",
+        "prefix": "msg"
       }
     }
   ]

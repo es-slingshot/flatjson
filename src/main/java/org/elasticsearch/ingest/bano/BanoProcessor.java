@@ -13,9 +13,13 @@ import org.elasticsearch.ingest.Processor;
 public final class BanoProcessor extends AbstractProcessor {
 
     public final static String NAME = "flatjson-esplugin";
+    private final String jsonField;
+    private final String prefix;
 
-    protected BanoProcessor(String tag) {
+    protected BanoProcessor(String tag, String jsonField, String prefix) {
         super(tag);
+        this.jsonField = jsonField;
+        this.prefix = prefix;
     }
     
     @Override
@@ -28,12 +32,12 @@ public final class BanoProcessor extends AbstractProcessor {
 
         Map<String, Object> mapValue
                 = XContentHelper.convertToMap(JsonXContent.jsonXContent
-                                    , ingestDocument.getFieldValue("message", String.class)
+                                    , ingestDocument.getFieldValue(jsonField, String.class)
                                     ,false);
 
         // dispatch the json bloc to a list of new fields
         mapValue.entrySet().stream()
-                .forEach(e -> ingestDocument.setFieldValue("msg_"+e.getKey(), e.getValue()));
+                .forEach(e -> ingestDocument.setFieldValue(prefix+"_"+e.getKey(), e.getValue()));
 
         // remove the previous field message
         ingestDocument.removeField("message");
@@ -43,7 +47,9 @@ public final class BanoProcessor extends AbstractProcessor {
         @Override
         public Processor create(Map<String, Processor.Factory> processorFactories, String tag, Map<String, Object> config) throws
                 Exception {
-            return new BanoProcessor(tag);
+            String jsonField = readStringProperty(NAME, tag, config, "jsonField", "message");
+            String prefix = readStringProperty(NAME, tag, config, "prefix", "msg");
+            return new BanoProcessor(tag, jsonField, prefix);
         }
     }
 
