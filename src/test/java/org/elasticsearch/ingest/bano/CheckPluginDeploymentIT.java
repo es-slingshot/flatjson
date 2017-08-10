@@ -26,7 +26,7 @@ public class CheckPluginDeploymentIT {
             System.out.println(execOutput);
             Assert.assertTrue("Logs should contains 'flatjson-esplugin'", execOutput.contains("flatjson-esplugin"));
         }
-        Assume.assumeTrue(false);
+        Assume.assumeTrue("No container running with label 'org.slingshot.plugin: flatjson'", false);
     }
 
 
